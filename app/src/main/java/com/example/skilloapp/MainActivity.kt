@@ -1,5 +1,6 @@
 package com.example.skilloapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -26,6 +27,10 @@ class MainActivity : AppCompatActivity() {
 
             if (isValidCredentials(username, password)) {
                 showToast("Login successful!")
+
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+                finish()
             } else {
                 showToast("Invalid credentials!")
             }
@@ -33,8 +38,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun isValidCredentials(username: String, password: String): Boolean {
-        // Aqui você pode adicionar a lógica para verificar as credenciais
-        // Por exemplo, você pode comparar com um nome de usuário e senha pré-definidos
         val validUsername = "admin"
         val validPassword = "password"
         return username == validUsername && password == validPassword

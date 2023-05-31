@@ -11,7 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:src="?attr/actionModeCloseDrawable" />
+        android:src="?attr/actionModeCloseDrawable"
+        app:tint="@color/black" />
 
     <TextView
         android:id="@+id/titleLogin"
@@ -25,8 +26,8 @@
         android:textColor="@color/purple_500"
         app:fontFamily="@font/inter_bold" />
 
-    <View
-        android:id="@+id/square2"
+    <EditText
+        android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="49dp"
         android:layout_below="@id/textSenha"
@@ -35,7 +36,9 @@
         android:layout_marginEnd="@dimen/square_margin_end"
         android:layout_toEndOf="@id/imageView"
         android:background="@drawable/rounded_square"
-        android:padding="16dp" />
+        android:inputType="text"
+        android:padding="16dp"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/textSenha"
@@ -50,8 +53,8 @@
         android:text="Senha"
         android:textColor="@color/black" />
 
-    <View
-        android:id="@+id/square1"
+    <EditText
+        android:id="@+id/editTextUsername"
         android:layout_width="match_parent"
         android:layout_height="49dp"
         android:layout_below="@id/Email"
@@ -60,7 +63,9 @@
         android:layout_marginEnd="@dimen/square_margin_end"
         android:layout_toEndOf="@id/imageView"
         android:background="@drawable/rounded_square"
-        android:padding="16dp" />
+        android:inputType="text"
+        android:padding="16dp"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/Email"
