@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">SkilloApp</string>
+    <string name="text_ola">Olá</string>
+    <string name="text_professor">Luciano</string>
+    <string name="title_reservas">Suas reservas</string>
+    <string name="title_horarios">Próximos horários</string>
+    <string name="title_tarefa">Tarefas</string>
+    <string name="text_tarefa">Nome da tarefa</string>
+    <string name="descricao_tarefa">Descrição da tarefa</string>
 </resources>
