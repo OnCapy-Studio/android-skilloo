@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F1F1F1">
 
     <ImageView
         android:id="@+id/imageView"
@@ -17,64 +18,78 @@
         style="@style/TextAppearance.MaterialComponents.Headline5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/imageView"
         android:layout_marginStart="5dp"
         android:layout_marginTop="11dp"
+        android:layout_toEndOf="@id/imageView"
         android:text="Login"
-        android:textColor="@color/purple"
+        android:textColor="@color/purple_500"
         app:fontFamily="@font/inter_bold" />
 
-    <TextView
-        android:id="@+id/textUsername"
+    <View
+        android:id="@+id/square2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/titleLogin"
-        android:layout_marginTop="16dp"
-        android:text="Username"
-        style="@style/TextAppearance.MaterialComponents.Subtitle1"
-        android:textColor="@color/black" />
-
-    <EditText
-        android:id="@+id/editTextUsername"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textUsername"
-        android:hint="Código"
+        android:layout_height="49dp"
+        android:layout_below="@id/textSenha"
+        android:layout_marginStart="@dimen/square_margin_start"
+        android:layout_marginTop="@dimen/square2_margin_top"
+        android:layout_marginEnd="@dimen/square_margin_end"
+        android:layout_toEndOf="@id/imageView"
+        android:background="@drawable/rounded_square"
         android:padding="16dp" />
 
     <TextView
         android:id="@+id/textSenha"
         style="@style/TextAppearance.MaterialComponents.Subtitle1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextUsername"
-        android:layout_marginTop="16dp"
+        android:layout_below="@id/Email"
+        android:layout_marginStart="@dimen/square_margin_start"
+        android:layout_marginTop="@dimen/text_senha_margin_top"
+        android:layout_toEndOf="@id/imageView"
+        android:fontFamily="@font/inter"
         android:text="Senha"
         android:textColor="@color/black" />
 
-    <EditText
-        android:id="@+id/editTextPassword"
+    <View
+        android:id="@+id/square1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textSenha"
-        android:hint="Senha"
-        android:inputType="textPassword"
+        android:layout_height="49dp"
+        android:layout_below="@id/Email"
+        android:layout_marginStart="@dimen/square_margin_start"
+        android:layout_marginTop="@dimen/square1_margin_top"
+        android:layout_marginEnd="@dimen/square_margin_end"
+        android:layout_toEndOf="@id/imageView"
+        android:background="@drawable/rounded_square"
         android:padding="16dp" />
+
+    <TextView
+        android:id="@+id/Email"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleLogin"
+        android:layout_marginStart="@dimen/square_margin_start"
+        android:layout_marginTop="@dimen/email_margin_top"
+        android:layout_toEndOf="@id/imageView"
+        android:fontFamily="@font/inter"
+        android:text="Email"
+        android:textColor="@color/black" />
 
     <Button
         android:id="@+id/buttonLogin"
         style="@style/Widget.AppCompat.Button"
-        android:layout_width="390dp"
-        android:layout_height="66dp"
-        android:layout_below="@id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="413dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/button"
+        android:fontFamily="@font/inter_bold"
         android:text="Entrar"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        app:backgroundTint="@color/purple" />
+        android:textSize="18sp"
+        app:backgroundTint="@color/purple_500" />
 
 </RelativeLayout>

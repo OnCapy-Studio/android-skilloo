@@ -1,0 +1,8 @@
+<resources>
+    <dimen name="square_margin_start">-42dp</dimen>
+    <dimen name="square_margin_end">16dp</dimen>
+    <dimen name="square2_margin_top">8dp</dimen>
+    <dimen name="text_senha_margin_top">80dp</dimen>
+    <dimen name="square1_margin_top">8dp</dimen>
+    <dimen name="email_margin_top">42dp</dimen>
+</resources>
