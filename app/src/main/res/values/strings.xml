@@ -1,4 +1,8 @@
 <resources>
+    <string name="text_login">Login</string>
+    <string name="text_senha">Senha</string>
+    <string name="text_email">Email</string>
+    <string name="text_entrar">Entrar</string>
     <string name="app_name">SkilloApp</string>
     <string name="text_ola">Olá</string>
     <string name="text_professor">Luciano</string>
