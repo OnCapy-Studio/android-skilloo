@@ -85,17 +85,18 @@
         android:text="@string/text_email"
         android:textColor="@color/black" />
 
+
     <Button
         android:id="@+id/password_toggle_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="24dp"
+        android:layout_height="30dp"
         android:layout_alignBottom="@id/textSenha"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="-4dp"
         android:layout_toEndOf="@id/textSenha"
         android:background="@android:color/transparent"
-        android:drawableStart="@drawable/ic_eye_closed" />
-
+        android:drawableStart="@drawable/ic_eye_closed"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/buttonLogin"
