@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             if (isValidCredentials(username, password)) {
                 showToast("Login successful!")
 
-                val intent = Intent(this, HomeActivity::class.java)
+                val intent = Intent(this, LabBookingActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {

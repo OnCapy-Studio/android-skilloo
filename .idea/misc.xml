@@ -3,24 +3,31 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/myrel/AndroidStudioProjects/SkilloApp/app/src/main/res/drawable/button.xml" value="0.1935" />
         <entry key="..\:/Users/myrel/AndroidStudioProjects/SkilloApp/app/src/main/res/drawable/card_background.xml" value="0.193" />
         <entry key="..\:/Users/myrel/AndroidStudioProjects/SkilloApp/app/src/main/res/drawable/card_task_background.xml" value="0.1" />
         <entry key="..\:/Users/myrel/AndroidStudioProjects/SkilloApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1935" />
         <entry key="..\:/Users/myrel/AndroidStudioProjects/SkilloApp/app/src/main/res/drawable/rounded_square.xml" value="0.1935" />
+        <entry key="..\:/Users/myrel/AndroidStudioProjects/SkilloApp/app/src/main/res/drawable/rounded_square_button.xml" value="0.1" />
         <entry key="..\:/Users/myrel/AndroidStudioProjects/SkilloApp/app/src/main/res/drawable/square_background.xml" value="0.1" />
         <entry key="..\:/Users/myrel/AndroidStudioProjects/SkilloApp/app/src/main/res/drawable/white_square_background.xml" value="0.1" />
         <entry key="..\:/Users/myrel/AndroidStudioProjects/SkilloApp/app/src/main/res/layout/activity_home.xml" value="0.22" />
-        <entry key="..\:/Users/myrel/AndroidStudioProjects/SkilloApp/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/myrel/AndroidStudioProjects/SkilloApp/app/src/main/res/layout/activity_horarios.xml" value="0.2850467289719626" />
+        <entry key="..\:/Users/myrel/AndroidStudioProjects/SkilloApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/myrel/AndroidStudioProjects/SkilloApp/app/src/main/res/layout/activy_horarios.xml" value="0.1633176571184267" />
         <entry key="..\:/Users/myrel/AndroidStudioProjects/SkilloApp/app/src/main/res/layout/card_background.xml" value="0.22" />
+        <entry key="..\:/Users/myrel/AndroidStudioProjects/SkilloApp/app/src/main/res/layout/card_item.xml" value="0.33" />
+        <entry key="..\:/Users/myrel/AndroidStudioProjects/SkilloApp/app/src/main/res/layout/days.xml" value="0.33" />
         <entry key="..\:/Users/myrel/AndroidStudioProjects/SkilloApp/app/src/main/res/layout/item_card.xml" value="0.18" />
         <entry key="..\:/Users/myrel/AndroidStudioProjects/SkilloApp/app/src/main/res/layout/list_item_card.xml" value="0.33" />
         <entry key="..\:/Users/myrel/AndroidStudioProjects/SkilloApp/app/src/main/res/layout/list_task_view" value="0.33" />
         <entry key="..\:/Users/myrel/AndroidStudioProjects/SkilloApp/app/src/main/res/layout/listview.xml" value="0.26685198054204307" />
+        <entry key="..\:/Users/myrel/AndroidStudioProjects/SkilloApp/app/src/main/res/layout/test.xml" value="0.33" />
         <entry key="..\:/Users/myrel/AndroidStudioProjects/SkilloApp/app/src/main/res/layout/teste.xml" value="0.9" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
