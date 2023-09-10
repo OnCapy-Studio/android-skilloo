@@ -33,6 +33,11 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.MaterialComponents.Light">
         </activity>
+        <activity
+            android:name=".SupportActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.MaterialComponents.Light">
+        </activity>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

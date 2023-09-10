@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#F1F1F1">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:layout_marginLeft="3dp"
-        android:background="#F1F1F1">
+        android:layout_marginLeft="3dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -68,7 +68,6 @@
             app:thumbColor="@color/white"
             app:trackColorActive="@color/purple_200"
             app:values="@array/default_slider_values" />
-
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/chip_group"

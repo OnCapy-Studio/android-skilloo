@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item>
-        <shape android:shape="rectangle">
-            <corners android:radius="5dp" />
-        </shape>
-    </item>
-
-    <item
-        android:bottom="2dp"
-        android:left="0dp"
-        android:right="0dp"
-        android:top="0dp">
-        <shape android:shape="rectangle">
-            <solid android:color="@android:color/white" />
-            <corners android:radius="8dp" />
-        </shape>
-    </item>
-</layer-list>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/transparent" /> <!-- Cor de fundo transparente -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/purple_500" /> <!-- Cor e largura da borda roxa -->
+    <corners android:radius="8dp" /> <!-- Raio dos cantos arredondados -->
+</shape>

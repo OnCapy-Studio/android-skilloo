@@ -1,6 +1,6 @@
 package com.example.skilloapp.data
 
-class CardItem(
+class CardBookingItem(
     var time: String,
     var duration: String,
     var labName: String,

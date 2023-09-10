@@ -1,20 +1,19 @@
 package com.example.skilloapp
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.skilloapp.adapter.CardAdapter
-import com.example.skilloapp.data.CardItem
+import com.example.skilloapp.adapter.CardBookingAdapter
+import com.example.skilloapp.data.CardBookingItem
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import com.google.android.material.slider.RangeSlider
 
 class LabBookingActivity : AppCompatActivity() {
-    private lateinit var cardAdapter: CardAdapter
-    private lateinit var cardItemList: MutableList<CardItem>
+    private lateinit var cardAdapter: CardBookingAdapter
+    private lateinit var cardItemList: MutableList<CardBookingItem>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,13 +30,13 @@ class LabBookingActivity : AppCompatActivity() {
 
         // Dados - CardItem
         cardItemList = mutableListOf()
-        cardItemList.add(CardItem("08:40", "50min", "Laboratório 1", "Matéria 1", "1 DS B"))
-        cardItemList.add(CardItem("09:30", "45min", "Laboratório 2", "Matéria 2", "3 DS B"))
-        cardItemList.add(CardItem("23:30", "45min", "Laboratório 2", "Matéria 2", "3 DS B"))
-        cardItemList.add(CardItem("17:30", "45min", "Laboratório 2", "Matéria 2", "3 DS B"))
+        cardItemList.add(CardBookingItem("08:40", "50min", "Laboratório 1", "Matéria 1", "1 DS B"))
+        cardItemList.add(CardBookingItem("09:30", "45min", "Laboratório 2", "Matéria 2", "3 DS B"))
+        cardItemList.add(CardBookingItem("23:30", "45min", "Laboratório 2", "Matéria 2", "3 DS B"))
+        cardItemList.add(CardBookingItem("17:30", "45min", "Laboratório 2", "Matéria 2", "3 DS B"))
 
         // Configure o adaptador
-        cardAdapter = CardAdapter(cardItemList)
+        cardAdapter = CardBookingAdapter(cardItemList)
         recyclerView.adapter = cardAdapter
     }
 
@@ -82,10 +81,8 @@ class LabBookingActivity : AppCompatActivity() {
 
             cardAdapter.cardItemList = filteredReservations
             cardAdapter.notifyDataSetChanged()
-        }
-    }
 
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+        }
+
     }
 }

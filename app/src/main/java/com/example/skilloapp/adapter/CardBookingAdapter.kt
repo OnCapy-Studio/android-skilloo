@@ -3,13 +3,14 @@ package com.example.skilloapp.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.skilloapp.R
-import com.example.skilloapp.data.CardItem
+import com.example.skilloapp.data.CardBookingItem
 
-class CardAdapter(var cardItemList: List<CardItem>) :
-    RecyclerView.Adapter<CardAdapter.ViewHolder>() {
+class CardBookingAdapter(var cardItemList: List<CardBookingItem>) :
+    RecyclerView.Adapter<CardBookingAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
@@ -25,6 +26,10 @@ class CardAdapter(var cardItemList: List<CardItem>) :
         holder.labNameTextView.text = cardItem.labName
         holder.subjectTextView.text = cardItem.subject
         holder.roomTextView.text = cardItem.room
+
+        holder.reserveButton.setOnClickListener {
+            onReserveClickListener?.onReserveClick(position)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -32,10 +37,22 @@ class CardAdapter(var cardItemList: List<CardItem>) :
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val reserveButton: Button = itemView.findViewById(R.id.button2)
         val timeTextView: TextView = itemView.findViewById(R.id.timeTextView)
         val durationTextView: TextView = itemView.findViewById(R.id.durationTextView)
         val labNameTextView: TextView = itemView.findViewById(R.id.labNameTextView)
         val subjectTextView: TextView = itemView.findViewById(R.id.subjectTextView)
         val roomTextView: TextView = itemView.findViewById(R.id.roomTextView)
     }
+
+    interface OnReserveClickListener {
+        fun onReserveClick(position: Int)
+    }
+
+    private var onReserveClickListener: OnReserveClickListener? = null
+
+    fun setOnReserveClickListener(listener: OnReserveClickListener) {
+        onReserveClickListener = listener
+    }
+
 }
