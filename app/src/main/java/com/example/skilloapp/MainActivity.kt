@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        supportActionBar?.hide()
 
         editTextUsername = findViewById(R.id.editTextUsername)
         editTextPassword = findViewById(R.id.editTextPassword)
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             if (isValidCredentials(username, password)) {
                 showToast("Login successful!")
 
-                val intent = Intent(this, SupportActivity::class.java)
+                val intent = Intent(this, CommitActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {

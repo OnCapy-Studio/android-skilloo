@@ -13,11 +13,13 @@
 
         <TextView
             android:id="@+id/textViewTitle"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Dados Pessoais"
-            android:textSize="18sp"
+            android:textColor="@color/purple_200"
+            android:textSize="22dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,16 +36,6 @@
             app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
 
         <TextView
-            android:id="@+id/textViewFullNameValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="variavel com nome"
-            android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@+id/textViewFullNameLabel"
-            app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
-
-        <TextView
             android:id="@+id/textViewEmailLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,16 +43,6 @@
             android:text="Email:"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewFullNameLabel" />
-
-        <TextView
-            android:id="@+id/textViewEmailValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="variavel com email"
-            android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@+id/textViewEmailLabel"
             app:layout_constraintTop_toBottomOf="@+id/textViewFullNameLabel" />
 
         <TextView
@@ -74,16 +56,6 @@
             app:layout_constraintTop_toBottomOf="@+id/textViewEmailLabel" />
 
         <TextView
-            android:id="@+id/textViewCadastroValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="estadual"
-            android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@+id/textViewCadastroLabel"
-            app:layout_constraintTop_toBottomOf="@+id/textViewEmailLabel" />
-
-        <TextView
             android:id="@+id/textViewPontuacaoLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -93,14 +65,5 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewCadastroLabel" />
 
-        <TextView
-            android:id="@+id/textViewPontuacaoValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="1100"
-            android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@+id/textViewPontuacaoLabel"
-            app:layout_constraintTop_toBottomOf="@+id/textViewCadastroLabel" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
