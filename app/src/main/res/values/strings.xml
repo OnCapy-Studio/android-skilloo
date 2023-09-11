@@ -1,10 +1,21 @@
 <resources>
+    <string name="text_login">Login</string>
+    <string name="text_senha">Senha</string>
+    <string name="text_email">Email</string>
+    <string name="text_entrar">Entrar</string>
     <string name="app_name">SkilloApp</string>
-    <string name="text_ola">Olá</string>
+    <string name="text_ola">Olá,</string>
     <string name="text_professor">Luciano</string>
     <string name="title_reservas">Suas reservas</string>
     <string name="title_horarios">Próximos horários</string>
     <string name="title_tarefa">Tarefas</string>
     <string name="text_tarefa">Nome da tarefa</string>
     <string name="descricao_tarefa">Descrição da tarefa</string>
+    <string name="diadasemana">SEG</string>
+    <string name="diadomes">20</string>
+    <string name="mes">ABR</string>
+    <string name="aula">Planejamento de TCC</string>
+    <string name="turma">3 Novotec DS B</string>
+    <string name="sala">Laboratório 3</string>
+    <string name="hora">7h00</string>
 </resources>

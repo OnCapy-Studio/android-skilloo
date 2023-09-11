@@ -47,6 +47,7 @@
         android:layout_marginBottom="-235dp"
         android:fontFamily="@font/inter_semibold"
         android:paddingBottom="10dp"
+        android:drawableRight="@drawable/ic_arcofrente"
         android:text="@string/title_reservas"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@color/purple_200"
@@ -61,6 +62,7 @@
         android:layout_marginTop="100dp"
         android:fontFamily="@font/inter_semibold"
         android:paddingBottom="10dp"
+        android:drawableRight="@drawable/ic_arcofrente"
         android:text="@string/title_horarios"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@color/purple_200"
@@ -75,7 +77,45 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/square_background"
-        android:visibility="visible" />
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/squareTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/diadasemana"
+        android:textSize="13sp"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/textView7"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="29dp"/>
+
+    <TextView
+        android:id="@+id/squareText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/mes"
+        android:textSize="13sp"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/textView7"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="73dp"/>
+
+    <TextView
+        android:id="@+id/squareNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/diadomes"
+        android:fontFamily="@font/inter_bold"
+        android:textSize="25sp"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/textView7"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="42dp"/>
 
     <View
         android:id="@+id/whiteSquareView"
@@ -84,7 +124,7 @@
         android:layout_below="@id/textView7"
         android:layout_marginStart="0dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="25dp"
         android:layout_toEndOf="@id/squareView"
         android:background="@drawable/white_square_background"
         android:visibility="visible" />
@@ -92,40 +132,135 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="116dp"
+        android:layout_height="65dp"
         android:layout_below="@id/textView"
         android:layout_gravity="center"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="252dp"
+        android:layout_marginTop="250dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/purple_100"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/card_background"
         app:cardCornerRadius="10dp"
-        tools:ignore="NotSibling">
+        app:cardElevation="0dp" />
 
-        <ImageView
-            android:id="@+id/img"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:contentDescription="@string/app_name" />
+    <TextView
+        android:id="@+id/squareAula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/aula"
+        android:fontFamily="@font/inter_medium"
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:layout_below="@id/textView7"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="26dp"/>
 
-        <ImageView
-            android:id="@+id/img2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:contentDescription="@string/app_name" />
+    <TextView
+        android:id="@+id/squareTurma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/turma"
+        android:fontFamily="@font/inter_light"
+        android:textSize="12sp"
+        android:textColor="@color/black"
+        android:layout_below="@id/textView7"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="45dp"/>
 
-    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/squareSala"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/sala"
+        android:fontFamily="@font/inter_medium"
+        android:textSize="12sp"
+        android:textColor="@color/purple_200"
+        android:layout_below="@id/textView7"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="62dp"/>
+
+    <TextView
+        android:id="@+id/squareHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/hora"
+        android:drawableLeft="@drawable/ic_tempo"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/inter_medium"
+        android:textSize="10sp"
+        android:textColor="@color/black"
+        android:layout_below="@id/textView7"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="80dp"/>
+
+
+    <TextView
+        android:id="@+id/squareHoradois"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="07:00"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/inter"
+        android:textSize="15dp"
+        android:textColor="@color/purple_200"
+        android:layout_below="@id/textView7"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="195dp"/>
+
+    <TextView
+        android:id="@+id/squareReservatempo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="50 min"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/inter"
+        android:textSize="11dp"
+        android:textColor="@color/black"
+        android:layout_below="@id/textView7"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="216dp"/>
+
+    <TextView
+        android:id="@+id/squareSaladeaula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Laboratório 3"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/inter_medium"
+        android:textSize="13sp"
+        android:textColor="@color/purple_200"
+        android:layout_below="@id/textView7"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="195dp"/>
+
+    <TextView
+        android:id="@+id/squareAulaReserva"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Planejamento de TCC"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/inter"
+        android:textSize="11dp"
+        android:textColor="@color/black"
+        android:layout_below="@id/textView7"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="216dp"/>
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -165,9 +300,11 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/inter_medium"
-                android:text="@string/text_tarefa"
+                android:text="Projetos - PDTCC"
                 android:textColor="@color/black"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                app:cardElevation="4dp"
+                />
 
             <TextView
                 android:id="@+id/line2"
@@ -176,7 +313,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:fontFamily="@font/inter"
-                android:text="@string/descricao_tarefa"
+                android:text="Analisar o progresso dos alunos nos seus projetos..."
                 android:textColor="@color/gray"
                 android:textSize="11sp" />
 
