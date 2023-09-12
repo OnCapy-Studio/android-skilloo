@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:screenOrientation="portrait">
+
+    <Button
+        android:id="@+id/button2"
+        style="@android:style/Widget.Button"
+        android:layout_width="297dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/button_radius"
+        android:backgroundTint="#6A5FB6"
+        android:fontFamily="@font/inter"
+        android:text="Adicionar tarefa"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="38dp"
+        android:fontFamily="@font/inter"
+        android:text="Controlar Tarefas"
+        android:textColor="#6A5FB6"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
+        android:background="@null"
+        android:contentDescription=" "
+        android:src="@drawable/arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton1"
+        android:layout_width="52dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/button_toggle"
+        android:backgroundTint="#CCC4FF"
+        android:checked="false"
+        android:fontFamily="@font/inter"
+        android:text="ToggleButton"
+        android:textColor="#6A5FB6"
+        android:textOff="SEG"
+        android:textOn="SEG"
+        app:layout_constraintEnd_toStartOf="@+id/toggleButton2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"/>
+
+    <ToggleButton
+        android:id="@+id/toggleButton2"
+        android:layout_width="52dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/button_toggle"
+        android:backgroundTint="#CCC4FF"
+        android:checked="false"
+        android:fontFamily="@font/inter"
+        android:text="ToggleButton"
+        android:textColor="#6A5FB6"
+        android:textOff="TER"
+        android:textOn="TER"
+        app:layout_constraintEnd_toStartOf="@+id/toggleButton3"
+        app:layout_constraintStart_toEndOf="@+id/toggleButton1"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton3"
+        android:layout_width="52dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/button_toggle"
+        android:backgroundTint="#CCC4FF"
+        android:checked="false"
+        android:fontFamily="@font/inter"
+        android:text="ToggleButton"
+        android:textColor="#6A5FB6"
+        android:textOff="QUA"
+        android:textOn="QUA"
+        app:layout_constraintEnd_toStartOf="@+id/toggleButton4"
+        app:layout_constraintStart_toEndOf="@+id/toggleButton2"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton4"
+        android:layout_width="52dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/button_toggle"
+        android:backgroundTint="#CCC4FF"
+        android:checked="false"
+        android:fontFamily="@font/inter"
+        android:text="ToggleButton"
+        android:textColor="#6A5FB6"
+        android:textOff="QUI"
+        android:textOn="QUI"
+        app:layout_constraintEnd_toStartOf="@+id/toggleButton5"
+        app:layout_constraintStart_toEndOf="@+id/toggleButton3"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton5"
+        android:layout_width="52dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/button_toggle"
+        android:backgroundTint="#CCC4FF"
+        android:checked="false"
+        android:fontFamily="@font/inter"
+        android:text="ToggleButton"
+        android:textColor="#6A5FB6"
+        android:textOff="SEX"
+        android:textOn="SEX"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/toggleButton4"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/inter"
+        android:text="Exibir tarefas concluídas"
+        android:textColor="#3465BB"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toggleButton1" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        android:contentDescription=" "
+        android:src="@drawable/botao_expansivel"
+        android:tintMode="src_in"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/toggleButton1"
+        app:srcCompat="@drawable/botao_expansivel"
+        tools:srcCompat="@drawable/botao_expansivel" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="86dp"
+        android:layout_marginEnd="95dp"
+        android:src="@drawable/nuts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="73dp"
+        android:fontFamily="@font/inter"
+        android:text="Não há tarefas cadastradas"
+        android:textColor="#6A5FB6"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="132dp"
+        android:layout_marginEnd="133dp"
+        android:text="Adicione uma agora!"
+        android:textColor="#527BC3"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
