@@ -1,3 +1,5 @@
+package com.example.skilloapp
+
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -7,7 +9,7 @@ import com.example.skilloapp.HomeActivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class Login : AppCompatActivity() {
     private lateinit var editTextUsername: EditText
     private lateinit var editTextPassword: EditText
     private lateinit var buttonLogin: Button

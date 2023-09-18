@@ -10,15 +10,5 @@ class ControlarTarefas : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.controlar_tarefas)
 
-        fun onToggleClicked(view: View) {
-            if (view is ToggleButton) {
-                val isChecked = view.isChecked
-                if(isChecked){
-
-                } else {
-
-                }
-            }
-        }
     }
 }
