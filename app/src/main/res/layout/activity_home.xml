@@ -60,9 +60,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="100dp"
+        android:drawableRight="@drawable/ic_arcofrente"
         android:fontFamily="@font/inter_semibold"
         android:paddingBottom="10dp"
-        android:drawableRight="@drawable/ic_arcofrente"
         android:text="@string/title_horarios"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@color/purple_200"
@@ -303,8 +303,7 @@
                 android:text="Projetos - PDTCC"
                 android:textColor="@color/black"
                 android:textSize="12sp"
-                app:cardElevation="4dp"
-                />
+                app:cardElevation="4dp" />
 
             <TextView
                 android:id="@+id/line2"

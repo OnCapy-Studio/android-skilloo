@@ -1,4 +1,4 @@
-package com.example.skilloapp
+package com.example.skilloapp.ui
 
 import android.os.Bundle
 import android.widget.Button
@@ -6,6 +6,11 @@ import android.widget.EditText
 import android.widget.Toast
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
+import com.example.skilloapp.R
+import com.example.skilloapp.data.ApiService
+import com.example.skilloapp.data.RetrofitConfig
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
     private lateinit var editTextUsername: EditText
@@ -18,6 +23,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
+
+        val apiService = RetrofitConfig.createService(ApiService::class.java)
 
         editTextUsername = findViewById(R.id.editTextUsername)
         editTextPassword = findViewById(R.id.editTextPassword)
@@ -35,7 +42,7 @@ class MainActivity : AppCompatActivity() {
             if (isValidCredentials(username, password)) {
                 showToast("Login successful!")
 
-                val intent = Intent(this, CommitActivity::class.java)
+                val intent = Intent(this, SupportActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {

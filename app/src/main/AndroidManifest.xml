@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:theme="@style/Theme.MaterialComponents.Light"
             android:exported="true">
             <intent-filter>
@@ -23,22 +23,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HomeActivity"
+            android:name=".ui.HomeActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.MaterialComponents.Light">
         </activity>
         <activity
-            android:name=".LabBookingActivity"
+            android:name=".ui.LabBookingActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.MaterialComponents.Light">
         </activity>
         <activity
-            android:name=".CommitActivity"
+            android:name=".ui.CommitActivity"
             android:label="SkilloApp"
             android:theme="@style/Theme.MaterialComponents.Light">
         </activity>
         <activity
-            android:name=".SupportActivity"
+            android:name=".ui.SupportActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.MaterialComponents.Light">
         </activity>

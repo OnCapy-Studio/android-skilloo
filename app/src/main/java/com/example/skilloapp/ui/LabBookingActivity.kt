@@ -1,10 +1,11 @@
-package com.example.skilloapp
+package com.example.skilloapp.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.skilloapp.R
 import com.example.skilloapp.adapter.CardBookingAdapter
 import com.example.skilloapp.data.CardBookingItem
 import com.google.android.material.chip.Chip
@@ -20,25 +21,33 @@ class LabBookingActivity : AppCompatActivity() {
         setContentView(R.layout.activity_horarios)
         supportActionBar?.hide()
 
+        initializeViews()
         setupRecyclerView()
         setupChips()
         setupRangeSlider()
+    }
+
+    private fun initializeViews() {
+        cardItemList = mutableListOf()
+        cardAdapter = CardBookingAdapter(cardItemList)
     }
 
     private fun setupRecyclerView() {
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        // Dados - CardItem
-        cardItemList = mutableListOf()
+        // Add sample data
+        addSampleCardItems()
+
+        // Configure the adapter
+        recyclerView.adapter = cardAdapter
+    }
+
+    private fun addSampleCardItems() {
         cardItemList.add(CardBookingItem("08:40", "50min", "Laboratório 1", "Matéria 1", "1 DS B"))
         cardItemList.add(CardBookingItem("09:30", "45min", "Laboratório 2", "Matéria 2", "3 DS B"))
         cardItemList.add(CardBookingItem("23:30", "45min", "Laboratório 2", "Matéria 2", "3 DS B"))
         cardItemList.add(CardBookingItem("17:30", "45min", "Laboratório 2", "Matéria 2", "3 DS B"))
-
-        // Configure o adaptador
-        cardAdapter = CardBookingAdapter(cardItemList)
-        recyclerView.adapter = cardAdapter
     }
 
     private fun setupChips() {
@@ -82,8 +91,6 @@ class LabBookingActivity : AppCompatActivity() {
 
             cardAdapter.cardItemList = filteredReservations
             cardAdapter.notifyDataSetChanged()
-
         }
-
     }
 }

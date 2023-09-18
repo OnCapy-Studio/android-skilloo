@@ -1,4 +1,4 @@
-package com.example.skilloapp
+package com.example.skilloapp.ui
 
 import android.app.Dialog
 import android.content.Context
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.Button
 import android.widget.EditText
+import com.example.skilloapp.R
 
 class CreateCommitDialog(context: Context, private val onSaveClickListener: (String, String) -> Unit) : Dialog(context) {
 

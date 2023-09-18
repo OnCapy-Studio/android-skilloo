@@ -1,21 +1,17 @@
-package com.example.skilloapp
+package com.example.skilloapp.ui
 
 import CommitAdapter
 import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.ItemTouchHelper.RIGHT
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
+import com.example.skilloapp.R
 import com.example.skilloapp.data.CommitModel
 import java.text.SimpleDateFormat
 import java.util.*
@@ -36,8 +32,7 @@ class CommitActivity : AppCompatActivity() {
         initializeViews()
         setupRecyclerView()
         populateSpinner()
-        setupFilterSpinnerListener()
-        setupCreateCommitButtonListener()
+        setupListeners()
         setupSwipeToDelete()
     }
 
@@ -60,6 +55,11 @@ class CommitActivity : AppCompatActivity() {
         filterSpinner.adapter = filterAdapter
     }
 
+    private fun setupListeners() {
+        setupFilterSpinnerListener()
+        setupCreateCommitButtonListener()
+    }
+
     private fun setupFilterSpinnerListener() {
         filterSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
@@ -72,12 +72,12 @@ class CommitActivity : AppCompatActivity() {
                 if (selectedItem == "Semana") {
                     applyWeekFilter()
                 } else {
-                    // Implemente outros filtros aqui
+                    // Implement other filters here if needed
                 }
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                // Lidar com nenhum item selecionado, se necessário
+                // Handle nothing selected if necessary
             }
         }
     }
@@ -109,7 +109,7 @@ class CommitActivity : AppCompatActivity() {
     }
 
     private fun applyWeekFilter() {
-        // Implemente a lógica do filtro por semana aqui e atualize o adaptador
+        // Implement the week filter logic here and update the adapter
     }
 
     private fun showCreateCommitDialog() {
@@ -133,8 +133,8 @@ class CommitActivity : AppCompatActivity() {
 
                 dialog.dismiss()
             } else {
-                // Mostrar uma mensagem de erro ao usuário informando que os campos estão vazios
-                Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
+                // Show an error message to the user indicating that the fields are empty
+                Toast.makeText(this, "Fill in all fields", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -143,13 +143,13 @@ class CommitActivity : AppCompatActivity() {
 
     private fun showDeleteConfirmationDialog(position: Int) {
         val confirmDialog = AlertDialog.Builder(this)
-            .setTitle("Confirmar exclusão")
-            .setMessage("Tem certeza de que deseja excluir este registro?")
-            .setPositiveButton("Sim") { _, _ ->
+            .setTitle("Confirm Deletion")
+            .setMessage("Are you sure you want to delete this record?")
+            .setPositiveButton("Yes") { _, _ ->
                 commitList.removeAt(position)
                 adapter.notifyItemRemoved(position)
             }
-            .setNegativeButton("Cancelar") { _, _ ->
+            .setNegativeButton("Cancel") { _, _ ->
                 adapter.notifyItemChanged(position)
             }
             .setOnCancelListener {

@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:layout_margin="10dp"
-    android:background="@drawable/card_background"
+    android:background="@drawable/card_background_filled"
     android:clickable="true"
     android:padding="5dp"
     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck">
@@ -18,8 +18,8 @@
         android:layout_height="wrap_content"
         android:paddingTop="5dp"
         android:text="Título do Pedido"
-        android:textColor="@color/purple_200"
-        android:textSize="14dp"
+        android:textColor="@color/white"
+        android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textViewLocation"
         app:layout_constraintStart_toStartOf="@+id/textViewLocation" />
@@ -31,7 +31,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:text="Localização"
-        android:textSize="12dp"
+        android:textColor="@color/background"
+        android:textSize="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

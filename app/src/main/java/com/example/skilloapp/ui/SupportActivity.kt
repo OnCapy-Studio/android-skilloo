@@ -1,8 +1,10 @@
-package com.example.skilloapp
+package com.example.skilloapp.ui
+
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.skilloapp.R
 import com.example.skilloapp.adapter.SupportRequestAdapter
 import com.example.skilloapp.data.SupportRequest
 import com.google.gson.Gson
@@ -31,22 +33,23 @@ class SupportActivity : AppCompatActivity() {
         val gson = Gson()
         val supportRequests = gson.fromJson(json, Array<SupportRequest>::class.java).toList()
 
-        val layoutManagerPending = LinearLayoutManager(this)
-        val layoutManagerInProgress = LinearLayoutManager(this)
-
         val recyclerViewPending = findViewById<RecyclerView>(R.id.recyclerViewPendingOrders)
-        recyclerViewPending.layoutManager = layoutManagerPending
-
         val recyclerViewInProgress = findViewById<RecyclerView>(R.id.recyclerViewInProgressOrders)
-        recyclerViewInProgress.layoutManager = layoutManagerInProgress
 
-        val pendingRequests = supportRequests.filter { it.status == "PENDENTE" }
-        val inProgressRequests = supportRequests.filter { it.status == "EM ANDAMENTO" }
+        setupRecyclerView(recyclerViewPending, supportRequests, "PENDENTE")
+        setupRecyclerView(recyclerViewInProgress, supportRequests, "EM ANDAMENTO")
+    }
 
-        val pendingAdapter = SupportRequestAdapter(pendingRequests)
-        val inProgressAdapter = SupportRequestAdapter(inProgressRequests)
+    private fun setupRecyclerView(
+        recyclerView: RecyclerView,
+        supportRequests: List<SupportRequest>,
+        status: String
+    ) {
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
-        recyclerViewPending.adapter = pendingAdapter
-        recyclerViewInProgress.adapter = inProgressAdapter
+        val filteredRequests = supportRequests.filter { it.status == status }
+
+        val adapter = SupportRequestAdapter(filteredRequests)
+        recyclerView.adapter = adapter
     }
 }
