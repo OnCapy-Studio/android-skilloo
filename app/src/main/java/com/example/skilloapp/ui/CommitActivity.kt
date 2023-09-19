@@ -39,7 +39,7 @@ class CommitActivity : AppCompatActivity() {
         val arrowControle = findViewById<ImageView>(R.id.arrowControle)
 
         arrowControle.setOnClickListener {
-            goToMainActivity()
+            goToHomeActivity()
         }
     }
 
@@ -167,8 +167,8 @@ class CommitActivity : AppCompatActivity() {
         confirmDialog.show()
     }
 
-    private fun goToMainActivity() {
-        val intent = Intent(this, MainActivity::class.java)
+    private fun goToHomeActivity() {
+        val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
         finish()
     }

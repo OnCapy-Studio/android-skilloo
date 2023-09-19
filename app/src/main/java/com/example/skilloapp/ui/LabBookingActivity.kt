@@ -42,7 +42,7 @@ class LabBookingActivity : AppCompatActivity() {
         val arrowControle = findViewById<ImageView>(R.id.arrowControle)
 
         arrowControle.setOnClickListener {
-            goToMainActivity()
+            goToHomeActivity()
         }
     }
 
@@ -137,8 +137,8 @@ class LabBookingActivity : AppCompatActivity() {
         })
     }
 
-    private fun goToMainActivity() {
-        val intent = Intent(this, MainActivity::class.java)
+    private fun goToHomeActivity() {
+        val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
         finish() // Isso encerrará a atividade atual para que não possa voltar a ela pressionando o botão "Voltar".
     }
