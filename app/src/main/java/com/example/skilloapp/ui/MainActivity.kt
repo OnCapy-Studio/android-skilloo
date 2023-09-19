@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
             if (isValidCredentials(username, password)) {
                 showToast("Login successful!")
 
-                val intent = Intent(this, SupportActivity::class.java)
+                val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {

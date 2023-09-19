@@ -1,4 +1,8 @@
+package com.example.skilloapp.ui
+
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -34,6 +38,12 @@ class LabBookingActivity : AppCompatActivity() {
         setupRecyclerView()
         setupChips()
         setupRangeSlider()
+
+        val arrowControle = findViewById<ImageView>(R.id.arrowControle)
+
+        arrowControle.setOnClickListener {
+            goToMainActivity()
+        }
     }
 
     private fun initializeViews() {
@@ -125,6 +135,12 @@ class LabBookingActivity : AppCompatActivity() {
                 showToast("Erro na requisição da API")
             }
         })
+    }
+
+    private fun goToMainActivity() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish() // Isso encerrará a atividade atual para que não possa voltar a ela pressionando o botão "Voltar".
     }
 
     private fun showToast(message: String) {

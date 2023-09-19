@@ -1,4 +1,4 @@
-package com.example.skilloapp.data
+package com.example.skilloapp.data.model.suporte
 
 data class SupportRequest(
     val titulo: String,

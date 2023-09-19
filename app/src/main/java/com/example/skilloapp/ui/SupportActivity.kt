@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.skilloapp.R
 import com.example.skilloapp.adapter.SupportRequestAdapter
-import com.example.skilloapp.data.SupportRequest
+import com.example.skilloapp.data.model.suporte.SupportRequest
 import com.google.gson.Gson
 
 class SupportActivity : AppCompatActivity() {

@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.skilloapp.R
-import com.example.skilloapp.data.SupportRequest
+import com.example.skilloapp.data.model.suporte.SupportRequest
 
 class SupportRequestAdapter(private val supportRequests: List<SupportRequest>) :
     RecyclerView.Adapter<SupportRequestAdapter.ViewHolder>() {

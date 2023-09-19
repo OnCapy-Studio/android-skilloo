@@ -3,6 +3,7 @@ package com.example.skilloapp.ui
 import CommitAdapter
 import android.app.AlertDialog
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.*
@@ -34,6 +35,12 @@ class CommitActivity : AppCompatActivity() {
         populateSpinner()
         setupListeners()
         setupSwipeToDelete()
+
+        val arrowControle = findViewById<ImageView>(R.id.arrowControle)
+
+        arrowControle.setOnClickListener {
+            goToMainActivity()
+        }
     }
 
     private fun initializeViews() {
@@ -158,5 +165,11 @@ class CommitActivity : AppCompatActivity() {
             .create()
 
         confirmDialog.show()
+    }
+
+    private fun goToMainActivity() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }

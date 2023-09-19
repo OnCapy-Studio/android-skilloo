@@ -1,7 +1,14 @@
+package com.example.skilloapp.ui
+
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.FrameLayout
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import com.example.skilloapp.R
 import com.example.skilloapp.data.ApiService
 import com.example.skilloapp.data.RetrofitConfig
@@ -16,9 +23,35 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         supportActionBar?.hide()
-
-        // Carregar os dados da API
+        clickableCards()
         loadHomeData()
+    }
+
+    private fun clickableCards() {
+        // Encontre os elementos por ID
+        val whiteSquareView = findViewById<View>(R.id.whiteSquareView)
+        val cardView = findViewById<CardView>(R.id.cardView)
+        val frameLayout = findViewById<FrameLayout>(R.id.frameLayout) // Alterado para FrameLayout
+
+        // Adicione ouvintes de clique aos elementos
+        whiteSquareView.setOnClickListener {
+            // Abra a atividade de Commits
+            val intent = Intent(this, CommitActivity::class.java)
+            startActivity(intent)
+        }
+
+        cardView.setOnClickListener {
+            // Abra a atividade de Reservas
+            val intent = Intent(this, LabBookingActivity::class.java)
+            startActivity(intent)
+        }
+
+        frameLayout.setOnClickListener {
+            // Abra a atividade de Tarefas
+            // val intent = Intent(this, TarefasActivity::class.java)
+            // startActivity(intent)
+            // Você pode descomentar as linhas acima quando implementar a TarefasActivity
+        }
     }
 
     private fun loadHomeData() {
