@@ -132,7 +132,7 @@ class LabBookingActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<SalvarReservaResponse>, t: Throwable) {
-                showToast("Erro na requisição da API")
+//                showToast("Erro na requisição da API")
             }
         })
     }

@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.skilloapp.R
 import com.example.skilloapp.data.ApiService
 import com.example.skilloapp.data.RetrofitConfig
+import com.example.skilloapp.data.model.home.Home
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

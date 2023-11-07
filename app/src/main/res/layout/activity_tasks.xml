@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/titleTasksScreen"
+        android:layout_margin="10dp"
+        android:layout_marginLeft="3dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/arrowTasks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:src="?attr/actionModeCloseDrawable"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.25"
+                app:tint="@color/black" />
+
+            <TextView
+                android:id="@+id/titleTask"
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:text="Suas tarefas"
+                android:textColor="@color/purple_200"
+                app:fontFamily="@font/inter_bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/arrowTasks"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.111" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+
+    <!-- Adicione campos para criar tarefas aqui, como EditTexts para título e descrição -->
+
+    <EditText
+        android:id="@+id/editTextTaskTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleTasksScreen"
+        android:layout_marginTop="16dp"
+        android:hint="Título da Tarefa"
+        android:inputType="text"
+        android:backgroundTint="@color/purple_200" />
+
+    <EditText
+        android:id="@+id/editTextTaskDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextTaskTitle"
+        android:layout_marginTop="8dp"
+        android:hint="Descrição da Tarefa"
+        android:inputType="textMultiLine"
+        android:minLines="3"
+        android:backgroundTint="@color/purple_200" />
+
+    <!-- Botão para criar a tarefa -->
+
+    <Button
+        android:id="@+id/buttonCreateTask"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextTaskDescription"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/inter_bold"
+        android:text="Criar Tarefa"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:backgroundTint="@color/purple_500" />
+
+    <!-- Títulos das seções de tarefas -->
+
+<!--    <TextView-->
+<!--        android:id="@+id/titleTodo"-->
+<!--        style="@style/TextAppearance.MaterialComponents.Subtitle1"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/buttonCreateTask"-->
+<!--        android:layout_gravity="start"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:layout_marginTop="56dp"-->
+<!--        android:layout_marginBottom="8dp"-->
+<!--        android:text="Pendente"-->
+<!--        android:textColor="@color/black"-->
+<!--        app:fontFamily="@font/inter_medium" />-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewTodo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonCreateTask"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/titleInProgress"-->
+<!--        style="@style/TextAppearance.MaterialComponents.Subtitle1"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/titleTodo"-->
+<!--        android:layout_gravity="start"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginBottom="8dp"-->
+<!--        android:text="Em Progresso"-->
+<!--        android:textColor="@color/black"-->
+<!--        app:fontFamily="@font/inter_medium" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/titleDone"-->
+<!--        style="@style/TextAppearance.MaterialComponents.Subtitle1"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/titleInProgress"-->
+<!--        android:layout_gravity="start"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginBottom="8dp"-->
+<!--        android:text="Concluído"-->
+<!--        android:textColor="@color/black"-->
+<!--        app:fontFamily="@font/inter_medium" />-->
+
+    <!-- RecyclerViews para listar as tarefas em cada seção -->
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewInProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recyclerViewTodo"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewDone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recyclerViewInProgress"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp" />
+
+</RelativeLayout>

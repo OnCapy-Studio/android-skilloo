@@ -1,4 +1,3 @@
-import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,11 +7,11 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.skilloapp.R
-import com.example.skilloapp.data.CommitModel
+import com.example.skilloapp.data.model.commit.Commit
 import java.text.SimpleDateFormat
 import java.util.*
 
-class CommitAdapter(private val context: Context, private val commits: List<CommitModel>) :
+class CommitAdapter(private val context: Context, private val commits: List<Commit>) :
     RecyclerView.Adapter<CommitAdapter.CommitViewHolder>() {
 
     inner class CommitViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -54,10 +53,10 @@ class CommitAdapter(private val context: Context, private val commits: List<Comm
         val dataOrigem = formatoOrigem.parse(data)
 
         val formatoSaida = SimpleDateFormat(formatoDestino, Locale.getDefault())
-        return formatoSaida.format(dataOrigem)
+        return formatoSaida.format(dataOrigem!!)
     }
 
-    private fun showCommitInfoPopup(commit: CommitModel) {
+    private fun showCommitInfoPopup(commit: Commit) {
         val dialog = Dialog(context)
         dialog.setContentView(R.layout.popup_commit_info)
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)

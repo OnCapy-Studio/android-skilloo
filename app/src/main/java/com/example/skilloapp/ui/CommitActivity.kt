@@ -1,7 +1,6 @@
 package com.example.skilloapp.ui
 
 import CommitAdapter
-import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
@@ -11,9 +10,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.ItemTouchHelper.RIGHT
 import com.example.skilloapp.R
-import com.example.skilloapp.data.CommitModel
+import com.example.skilloapp.data.ApiService
+import com.example.skilloapp.data.RetrofitConfig
+import com.example.skilloapp.data.model.commit.Commit
+import com.example.skilloapp.data.model.commit.CommitRequest
+import com.example.skilloapp.data.model.common.Materia
+import com.example.skilloapp.data.model.turmas.TurmaResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -23,12 +29,19 @@ class CommitActivity : AppCompatActivity() {
     private lateinit var adapter: CommitAdapter
     private lateinit var filterSpinner: Spinner
     private lateinit var createCommitButton: Button
-    private val commitList = mutableListOf<CommitModel>()
+    private val commitList = mutableListOf<Commit>()
+    private lateinit var apiService: ApiService
+
+    private var selectedTurmaId: Int = -1
+    private var selectedMateriaId: Int = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_controle)
         supportActionBar?.hide()
+
+        // Inicializar o ApiService
+        apiService = RetrofitConfig.createService(ApiService::class.java)
 
         initializeViews()
         setupRecyclerView()
@@ -37,7 +50,6 @@ class CommitActivity : AppCompatActivity() {
         setupSwipeToDelete()
 
         val arrowControle = findViewById<ImageView>(R.id.arrowControle)
-
         arrowControle.setOnClickListener {
             goToHomeActivity()
         }
@@ -75,16 +87,19 @@ class CommitActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                val selectedItem = filterSpinner.selectedItem as String
+
+                val filterOptions = arrayOf("Mês", "Semana")
+
+                val selectedItem = filterOptions[position]
                 if (selectedItem == "Semana") {
                     applyWeekFilter()
                 } else {
-                    // Implement other filters here if needed
+                    // Implemente a lógica para outro filtro, se necessário
                 }
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                // Handle nothing selected if necessary
+                // Implemente conforme necessário
             }
         }
     }
@@ -96,75 +111,103 @@ class CommitActivity : AppCompatActivity() {
     }
 
     private fun setupSwipeToDelete() {
-        val itemTouchHelperCallback = object : ItemTouchHelper.SimpleCallback(0, RIGHT) {
-            override fun onMove(
-                recyclerView: RecyclerView,
-                viewHolder: RecyclerView.ViewHolder,
-                target: RecyclerView.ViewHolder
-            ): Boolean {
-                return false
-            }
+        val itemTouchHelperCallback =
+            object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
+                override fun onMove(
+                    recyclerView: RecyclerView,
+                    viewHolder: RecyclerView.ViewHolder,
+                    target: RecyclerView.ViewHolder
+                ): Boolean {
+                    return false
+                }
 
-            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                val position = viewHolder.adapterPosition
-                showDeleteConfirmationDialog(position)
+                override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                    val position = viewHolder.adapterPosition
+                    val commitId = commitList[position].id
+//                    showDeleteConfirmationDialog(position, commitId)
+                }
             }
-        }
 
         val itemTouchHelper = ItemTouchHelper(itemTouchHelperCallback)
         itemTouchHelper.attachToRecyclerView(recyclerView)
     }
 
     private fun applyWeekFilter() {
-        // Implement the week filter logic here and update the adapter
+        // Implemente a lógica para o filtro por semana e atualize o adaptador
     }
 
     private fun showCreateCommitDialog() {
-        val dialog = Dialog(this)
-        dialog.setContentView(R.layout.create_commit)
+        // Implemente a lógica para exibir o diálogo de criação de commit
+        // ...
 
-        val saveButton = dialog.findViewById<Button>(R.id.saveButton)
-        val titleEditText = dialog.findViewById<EditText>(R.id.titleEditText)
-        val descriptionEditText = dialog.findViewById<EditText>(R.id.descriptionEditText)
+        // Verifique se os IDs da turma e matéria foram selecionados
+        if (selectedTurmaId != -1 && selectedMateriaId != -1) {
+            val commitRequest = CommitRequest("Título", "Descrição", "Data")
+            apiService.criarCommit(selectedTurmaId, selectedMateriaId, commitRequest)
+                .enqueue(object : Callback<Void> {
+                    override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                        if (response.isSuccessful) {
+                            // Commit criado com sucesso, você pode tratar conforme necessário
+                            // Atualize a lista de commits ou faça qualquer outra ação necessária
+                        } else {
+                            // Não foi possível criar o commit, trate conforme necessário
+                        }
+                    }
 
-        saveButton.setOnClickListener {
-            val title = titleEditText.text.toString()
-            val description = descriptionEditText.text.toString()
-
-            if (title.isNotEmpty() && description.isNotEmpty()) {
-                val currentDate =
-                    SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault()).format(Date())
-                val newCommit = CommitModel(title, description, currentDate)
-                commitList.add(newCommit)
-                adapter.notifyDataSetChanged()
-
-                dialog.dismiss()
-            } else {
-                // Show an error message to the user indicating that the fields are empty
-                Toast.makeText(this, "Fill in all fields", Toast.LENGTH_SHORT).show()
-            }
+                    override fun onFailure(call: Call<Void>, t: Throwable) {
+                        // Erro de rede ou outro erro, trate conforme necessário
+                    }
+                })
+        } else {
+            // IDs da turma e matéria não selecionados, exiba uma mensagem de erro ao usuário
+            Toast.makeText(this, "Selecione uma turma e matéria", Toast.LENGTH_SHORT).show()
         }
-
-        dialog.show()
     }
 
-    private fun showDeleteConfirmationDialog(position: Int) {
-        val confirmDialog = AlertDialog.Builder(this)
-            .setTitle("Confirm Deletion")
-            .setMessage("Are you sure you want to delete this record?")
-            .setPositiveButton("Yes") { _, _ ->
-                commitList.removeAt(position)
-                adapter.notifyItemRemoved(position)
-            }
-            .setNegativeButton("Cancel") { _, _ ->
-                adapter.notifyItemChanged(position)
-            }
-            .setOnCancelListener {
-                adapter.notifyItemChanged(position)
-            }
-            .create()
+//    private fun showDeleteConfirmationDialog(position: Int, commitId: Int) {
+//        // Implementar a lógica para o diálogo de confirmação de exclusão
+//        val dialog = Dialog(this)
+//        dialog.setContentView(R.layout.dialog_confirmation)
+//        val cancelButton = dialog.findViewById<Button>(R.id.cancelButton)
+//        val confirmButton = dialog.findViewById<Button>(R.id.confirmButton)
+//
+//        cancelButton.setOnClickListener {
+//            dialog.dismiss()
+//        }
+//
+//        confirmButton.setOnClickListener {
+//            dialog.dismiss()
+//            deleteCommit(position, commitId)
+//        }
+//
+//        dialog.show()
+//    }
 
-        confirmDialog.show()
+    private fun deleteCommit(position: Int, commitId: Int) {
+        // Verificar se os IDs da turma e matéria foram selecionados
+        if (selectedTurmaId != -1 && selectedMateriaId != -1) {
+            apiService.excluirCommit(selectedTurmaId, selectedMateriaId, commitId)
+                .enqueue(object : Callback<Void> {
+                    override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                        if (response.isSuccessful) {
+                            // Commit excluído com sucesso, atualize sua lista de commits
+                            commitList.removeAt(position)
+                            adapter.notifyItemRemoved(position)
+                        } else {
+                            // Não foi possível excluir o commit, trate conforme necessário
+                            Toast.makeText(this@CommitActivity, "Erro ao excluir commit", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<Void>, t: Throwable) {
+                        // Erro de rede ou outro erro, trate conforme necessário
+                        Toast.makeText(this@CommitActivity, "Erro de rede ao excluir commit", Toast.LENGTH_SHORT).show()
+                    }
+                })
+        } else {
+            // IDs da turma e matéria não selecionados, exiba uma mensagem de erro ao usuário
+            Toast.makeText(this, "Selecione uma turma e matéria", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun goToHomeActivity() {

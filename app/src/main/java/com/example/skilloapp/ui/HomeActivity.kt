@@ -46,10 +46,8 @@ class HomeActivity : AppCompatActivity() {
         }
 
         frameLayout.setOnClickListener {
-            // Abra a atividade de Tarefas
-            // val intent = Intent(this, TarefasActivity::class.java)
-            // startActivity(intent)
-            // Você pode descomentar as linhas acima quando implementar a TarefasActivity
+             val intent = Intent(this, TaskActivity::class.java)
+             startActivity(intent)
         }
     }
 
@@ -65,13 +63,13 @@ class HomeActivity : AppCompatActivity() {
 
                 } else {
                     // Trate erros de resposta aqui
-                    showToast("Erro na resposta da API")
+//                    showToast("Erro na resposta da API")
                 }
             }
 
             override fun onFailure(call: Call<HomeResponse>, t: Throwable) {
                 // Trate erros de requisição aqui
-                showToast("Erro na requisição da API")
+//                showToast("Erro na requisição da API")
             }
         })
     }
