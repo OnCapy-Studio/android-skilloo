@@ -3,6 +3,8 @@ package com.example.skilloapp.data
 import com.example.skilloapp.data.model.commit.CommitRequest
 import com.example.skilloapp.data.model.commit.CommitResponse
 import com.example.skilloapp.data.model.home.HomeResponse
+import com.example.skilloapp.data.model.login.LoginRequest
+import com.example.skilloapp.data.model.login.LoginResponse
 import com.example.skilloapp.data.model.reserva.DiaDaSemana
 import com.example.skilloapp.data.model.reserva.HorarioResponse
 import com.example.skilloapp.data.model.reserva.ReservaResponse
@@ -18,6 +20,10 @@ import retrofit2.http.*
 
 
 interface ApiService {
+
+
+    @POST("/auth/login")
+    fun login(@Body loginRequest: LoginRequest): Call<LoginResponse>
 
     // home
     @GET("/home")

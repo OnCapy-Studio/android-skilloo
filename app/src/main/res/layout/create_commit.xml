@@ -12,6 +12,13 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+        <Spinner
+            android:id="@+id/subjectSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            tools:ignore="HardcodedText" />
+
         <EditText
             android:id="@+id/titleEditText"
             android:layout_width="match_parent"
@@ -29,6 +36,12 @@
             android:backgroundTint="@color/purple_500"
             android:hint="Descrição"
             android:inputType="textMultiLine" />
+
+        <Spinner
+            android:id="@+id/classSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
 
         <Button
             android:id="@+id/saveButton"

@@ -59,7 +59,7 @@ class HomeActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val homeResponse = response.body()
 
-                    updateLayoutWithApiData(homeResponse)
+//                    updateLayoutWithApiData(homeResponse)
 
                 } else {
                     // Trate erros de resposta aqui
@@ -74,18 +74,17 @@ class HomeActivity : AppCompatActivity() {
         })
     }
 
-    private fun updateLayoutWithApiData(homeResponse: HomeResponse?) {
-        if (homeResponse != null) {
-            findViewById<TextView>(R.id.squareAulaReserva).text = homeResponse.materia.nome
-            findViewById<TextView>(R.id.squareTurma).text = homeResponse.turma.nome
-//            findViewById<TextView>(R.id.squareSala).text = homeResponse.sala
-            findViewById<TextView>(R.id.squareHora).text = homeResponse.horario
-            findViewById<TextView>(R.id.squareHoradois).text = homeResponse.horario
-//            findViewById<TextView>(R.id.squareReservatempo).text = homeResponse.duracao
-//            findViewById<TextView>(R.id.squareSaladeaula).text = homeResponse.nomeSalaAula
-//            findViewById<TextView>(R.id.squareAula).text = homeResponse.aula
-        }
-    }
+//    private fun updateLayoutWithApiData(homeResponse: HomeResponse?) {
+//        if (homeResponse != null) {
+//            findViewById<TextView>(R.id.squareTurma).text = homeResponse.turma.nome
+////            findViewById<TextView>(R.id.squareSala).text = homeResponse.sala
+//            findViewById<TextView>(R.id.squareHora).text = homeResponse.horario
+//            findViewById<TextView>(R.id.squareHoradois).text = homeResponse.horario
+////            findViewById<TextView>(R.id.squareReservatempo).text = homeResponse.duracao
+////            findViewById<TextView>(R.id.squareSaladeaula).text = homeResponse.nomeSalaAula
+////            findViewById<TextView>(R.id.squareAula).text = homeResponse.aula
+//        }
+//    }
 
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
